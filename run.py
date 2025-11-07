@@ -1,5 +1,4 @@
 import tensorflow as tf
-from sklearn.preprocessing import StandardScaler
 import numpy as np
 import pandas as pd
 import joblib   # if you saved the scaler
@@ -10,6 +9,7 @@ model = tf.keras.models.load_model("rnn_lstm_letter_classifier.keras")
 # load scaler
 
 scaler = joblib.load("scaler.pkl")
+le = joblib.load("label_encoder.pkl")
 
 # load the file
 
@@ -22,7 +22,7 @@ FEATURES = ["flex_1", "flex_2", "flex_3", "flex_4", "flex_5",
 
 df = df[FEATURES].dropna()
 
-WINDOW, STEP = 100, 20
+WINDOW, STEP = 50, 20
 
 X_list = []
 arr = df.values
