@@ -22,7 +22,7 @@ FEATURES = ["flex_1", "flex_2", "flex_3", "flex_4", "flex_5",
 
 df = df[FEATURES].dropna()
 
-WINDOW, STEP = 50, 20
+WINDOW, STEP = 120, 20
 
 X_list = []
 arr = df.values
